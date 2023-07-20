@@ -12,7 +12,7 @@ def intersection_knn(A, B):
     non_zero_indices = [i for i, (a, b) in enumerate(zip(A, B)) if a != 0 and b != 0]
     return non_zero_indices
 
-pathFiles = "../dataset/pts2/"
+pathFiles = "dataset/pts2/"
 listOfFiles    = os.listdir(pathFiles)
 
 listOfMClSize = [2]#, 5, 8, 16, 20, 30]
