@@ -12,7 +12,7 @@ def intersection_knn(A, B):
     non_zero_indices = [i for i, (a, b) in enumerate(zip(A, B)) if a != 0 and b != 0]
     return non_zero_indices
 
-pathFiles = "dataset/pts2/"
+pathFiles = "../dataset/pts2/"
 listOfFiles    = os.listdir(pathFiles)
 
 listOfMClSize = [2]#, 5, 8, 16, 20, 30]
@@ -52,7 +52,7 @@ for fn in listOfFiles:
 
     knnMatrix = adjacencyMatrix * similarityMatrix
 
-    #print(knnMatrix)
+    print(knnMatrix)
     sigmaMatrix = np.zeros_like(knnMatrix)
     for i in range(knnMatrix.shape[0]):
         for j in range(knnMatrix.shape[0]):
@@ -73,7 +73,8 @@ for fn in listOfFiles:
             lowerLeft = np.sqrt(lowerLeft)
             sigmaMatrix[i,j] = upper/(lowerLeft * lowerRight)
     
-    #print(sigmaMatrix)
+    print(sigmaMatrix)
+    """
     ts = np.sum(sigmaMatrix)
     modList = []
     acc = 5
@@ -101,5 +102,5 @@ for fn in listOfFiles:
 
     print(f"TS = {ts}")
 
-
+"""
     
